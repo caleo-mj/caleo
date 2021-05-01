@@ -97,6 +97,7 @@ Tracks the user's calorie intake through identifying different types of food and
    | age       | Integer| user age |
    | weight    | Double     | user weight in kg |
    | height    | Double     | user height in cm |
+   | calCount  | Integer    | keeps track of User daily calorie intake
    | calGoal   | Integer     | user daily calorie goal  |
    
 ### Networking
