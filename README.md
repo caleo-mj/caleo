@@ -77,11 +77,6 @@ Tracks the user's calorie intake through identifying different types of food and
 ![](https://i.imgur.com/yM61VWt.jpg)
 
 
-
-### [BONUS] Digital Wireframes & Mockups
-
-### [BONUS] Interactive Prototype
-
 ## Schema 
 
 ### Models
