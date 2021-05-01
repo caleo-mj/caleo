@@ -83,10 +83,30 @@ Tracks the user's calorie intake through identifying different types of food and
 ### [BONUS] Interactive Prototype
 
 ## Schema 
-[This section will be completed in Unit 9]
+
 ### Models
-[Add table of models]
+
+#### Food 
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | name      | String   | unique name for food item (default field) |
+   | image        | File| image of food item |
+   | calories         | Integer     | calorie count of food item |
+   
+#### User 
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | name      | String   | unique name for the user (default field) |
+   | age       | Integer| user age |
+   | weight    | Double     | user weight in kg |
+   | height    | Double     | user height in cm |
+   | calGoal   | Integer     | user daily calorie goal  |
+   
 ### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+- We will be using a kaggle database of labeled food images in 101 categories of food to train a machine learning algorithm to recognize food from images taken by the user. 
+- Source for food database: "https://www.kaggle.com/kmader/food41"
+- We will be saving our trained model and including it locally in the app data on the user's phone, so we don't need to use any online databases or APIs. 
+- We will get the information needed to map each food with its calorie count from another local dataset in csv format. 
+- Source for calories database: "https://www.kaggle.com/data/192954"
