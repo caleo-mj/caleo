@@ -95,6 +95,7 @@ Tracks the user's calorie intake through identifying different types of food and
    | ------------- | -------- | ------------|
    | name      | String   | unique name for the user (default field) |
    | age       | Integer| user age |
+   | gender       | String | user gender |
    | weight    | Double     | user weight in kg |
    | height    | Double     | user height in cm |
    | calCount  | Integer    | keeps track of User daily calorie intake
