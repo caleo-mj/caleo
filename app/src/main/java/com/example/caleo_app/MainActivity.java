@@ -25,28 +25,28 @@ public class MainActivity extends AppCompatActivity {
 
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Fragment fragment;
-                switch (item.getItemId()) {
-                    case R.id.action_camera:
-                        fragment = new CameraFragment();
-                        break;
-                    case R.id.action_home:
-                        fragment = new HomeFragment();
-                        break;
-                    case R.id.action_food:
-                        fragment = new FoodFragment();
-                    case R.id.action_profile:
-                    default:
-                        fragment = new ProfileFragment();
-                        break;
-                }
-                fragmentManager.beginTransaction().replace(R.id.flContainer, fragment).commit();
-                return true;
-            }
-        });
+//        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+//            @Override
+//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//                Fragment fragment;
+//                switch (item.getItemId()) {
+//                    case R.id.action_camera:
+//                        fragment = new CameraFragment();
+//                        break;
+//                    case R.id.action_home:
+//                        fragment = new HomeFragment();
+//                        break;
+//                    case R.id.action_food:
+//                        fragment = new FoodFragment();
+//                    case R.id.action_profile:
+//                    default:
+//                        fragment = new ProfileFragment();
+//                        break;
+//                }
+//                fragmentManager.beginTransaction().replace(R.id.flContainer, fragment).commit();
+//                return true;
+//            }
+//        });
         bottomNavigationView.setSelectedItemId(R.id.action_home);
 
     }
@@ -54,4 +54,4 @@ public class MainActivity extends AppCompatActivity {
 
 
 }
-}
+//}

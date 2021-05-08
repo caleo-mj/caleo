@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">caleo-app</string>
+    <string name="app_name">Caleo</string>
+    <string name="hint">Gender</string>
 </resources>
