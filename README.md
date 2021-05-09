@@ -24,13 +24,13 @@ Tracks the user's calorie intake through identifying different types of food and
 
 **Required Must-have Stories**
 
-[x] User can enter their name, height, weight, and age to get a recommended daily calorie goal. 
-[] User can view their information and their daily calorie goal.
-[] User can edit their information and their daily calorie goal.
-[] User can view their daily intake, thier goal, and the remaining calories to acheive their goal.
-[] User can use the device's camera to  capture images of their food
-[] User gets back the associated calorie content of their food, and log it in to their daily intake. 
-[] User can choose to log food to their daily log manually by choosing from a list of food items.
+- [x] User can enter their name, height, weight, and age to get a recommended daily calorie goal. 
+- [ ] User can view their information and their daily calorie goal.
+- [ ] User can edit their information and their daily calorie goal.
+- [ ] User can view their daily intake, thier goal, and the remaining calories to acheive their goal.
+- [ ] User can use the device's camera to  capture images of their food
+- [ ] User gets back the associated calorie content of their food, and log it in to their daily intake. 
+- [ ] User can choose to log food to their daily log manually by choosing from a list of food items.
 
 **Optional Nice-to-have Stories**
 
