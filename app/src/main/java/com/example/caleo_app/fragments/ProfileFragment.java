@@ -1,4 +1,7 @@
 package com.example.caleo_app.fragments;
 
-public class ProfileFragment {
+import androidx.fragment.app.Fragment;
+
+public class ProfileFragment extends Fragment {
+
 }
