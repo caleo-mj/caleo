@@ -4,23 +4,23 @@
 
     <item
         android:id="@+id/action_home"
-        android:icon="@android:drawable/ic_menu_compass"
+        android:icon="@drawable/ic_home_black_48dp"
         android:title="Home"
         app:showAsAction="always" />
     <item
         android:id="@+id/action_camera"
-        android:icon="@android:drawable/ic_menu_camera"
+        android:icon="@drawable/ic_photo_camera_black_48dp"
         android:title="Scan"
         app:showAsAction="always" />
     <item
         android:id="@+id/action_food"
-        android:icon="@android:drawable/alert_light_frame"
+        android:icon="@drawable/ic_dining_black_48dp"
         android:title="Food"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/action_profile"
-        android:icon="@drawable/profile"
+        android:icon="@drawable/ic_person_black_48dp"
         android:title="Profile"
         app:showAsAction="always" />
 </menu>
