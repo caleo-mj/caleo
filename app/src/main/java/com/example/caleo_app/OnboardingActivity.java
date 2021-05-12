@@ -155,17 +155,17 @@ public class OnboardingActivity extends AppCompatActivity implements AdapterView
 
         switch (position) {
             case 0:
-                ((TextView) v).setTextColor(ContextCompat.getColor(OnboardingActivity.this, R.color.secondary));
+                ((TextView) v).setTextColor(ContextCompat.getColor(OnboardingActivity.this, R.color.cadet));
                 ((TextView) v).setTextSize(18);
                 user.setGender("male");
                 break;
             case 1:
-                ((TextView) v).setTextColor(ContextCompat.getColor(OnboardingActivity.this, R.color.secondary));
+                ((TextView) v).setTextColor(ContextCompat.getColor(OnboardingActivity.this, R.color.cadet));
                 ((TextView) v).setTextSize(18);
                 user.setGender("female");
                 break;
             default:
-                ((TextView) v).setTextColor(ContextCompat.getColor(OnboardingActivity.this, R.color.secondary));
+                ((TextView) v).setTextColor(ContextCompat.getColor(OnboardingActivity.this, R.color.cadet));
                 break;
 
         }

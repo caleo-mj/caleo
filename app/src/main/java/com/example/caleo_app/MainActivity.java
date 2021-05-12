@@ -8,7 +8,10 @@ import androidx.fragment.app.FragmentManager;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.caleo_app.fragments.FoodFragment;
+import com.example.caleo_app.fragments.HomeFragment;
 import com.example.caleo_app.fragments.ProfileFragment;
+import com.example.caleo_app.fragments.ScanFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,28 +28,29 @@ public class MainActivity extends AppCompatActivity {
 
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
-//        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-//            @Override
-//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//                Fragment fragment;
-//                switch (item.getItemId()) {
-//                    case R.id.action_camera:
-//                        fragment = new CameraFragment();
-//                        break;
-//                    case R.id.action_home:
-//                        fragment = new HomeFragment();
-//                        break;
-//                    case R.id.action_food:
-//                        fragment = new FoodFragment();
-//                    case R.id.action_profile:
-//                    default:
-//                        fragment = new ProfileFragment();
-//                        break;
-//                }
-//                fragmentManager.beginTransaction().replace(R.id.flContainer, fragment).commit();
-//                return true;
-//            }
-//        });
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Fragment fragment;
+                switch (item.getItemId()) {
+                    case R.id.action_camera:
+                        fragment = new ScanFragment();
+                        break;
+                    case R.id.action_home:
+                        fragment = new HomeFragment();
+                        break;
+                    case R.id.action_food:
+                        fragment = new FoodFragment();
+                        break;
+                    case R.id.action_profile:
+                    default:
+                        fragment = new ProfileFragment();
+                        break;
+                }
+                fragmentManager.beginTransaction().replace(R.id.flContainer, fragment).commit();
+                return true;
+            }
+        });
         bottomNavigationView.setSelectedItemId(R.id.action_home);
 
     }

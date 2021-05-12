@@ -19,7 +19,7 @@
         android:fontFamily="@font/josefin_sans_semibold"
         android:text="WELCOME TO CALEO"
         android:textAlignment="center"
-        android:textColor="@color/primary"
+        android:textColor="#1B998B"
         android:textSize="30sp" />
 
     <EditText
@@ -34,8 +34,8 @@
         android:fontFamily="@font/poppins"
         android:hint="Name"
         android:inputType="textPersonName"
-        android:textColor="@color/secondary"
-        android:textColorHint="#F3D6C9" />
+        android:textColor="@color/cadet"
+        android:textColorHint="#818287" />
 
     <EditText
         android:id="@+id/etAge"
@@ -49,8 +49,8 @@
         android:fontFamily="@font/poppins"
         android:hint="Age"
         android:inputType="number"
-        android:textColor="@color/secondary"
-        android:textColorHint="#F3D6C9" />
+        android:textColor="@color/cadet"
+        android:textColorHint="#818287" />
 
 
     <Spinner
@@ -78,9 +78,8 @@
         android:fontFamily="@font/poppins"
         android:hint="Height in cm"
         android:inputType="number"
-        android:textColor="@color/secondary"
-        android:textColorHint="#F3D6C9" />
-
+        android:textColor="@color/cadet"
+        android:textColorHint="#818287" />
     <EditText
         android:id="@+id/etWeight"
         android:layout_width="match_parent"
@@ -93,8 +92,8 @@
         android:fontFamily="@font/poppins"
         android:hint="Weight in kg"
         android:inputType="number"
-        android:textColor="@color/secondary"
-        android:textColorHint="#F3D6C9" />
+        android:textColor="@color/cadet"
+        android:textColorHint="#818287" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -114,20 +113,27 @@
             android:fontFamily="@font/poppins"
             android:hint="Daily calorie goal"
             android:inputType="number"
-            android:textColor="@color/secondary"
-            android:textColorHint="#F3D6C9" />
+            android:textColor="@color/cadet"
+            android:textColorHint="#818287" />
 
         <Button
             android:id="@+id/btnHint"
-            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
-            android:layout_width="30dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_weight="1"
-            android:textColorLink="#00ADB5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/secondary"
+            android:ellipsize="middle"
+            android:paddingLeft="12dp"
+            android:paddingEnd="8dp"
+            android:paddingRight="8dp"
             app:icon="@drawable/ic_tips_and_updates_black_48dp"
-            app:iconTint="#FFFFFF"
-            app:rippleColor="#F45A5A" />
+            app:iconGravity="textStart"
+            app:iconSize="30sp"
+            app:iconTint="#FFFFFF">
+
+        </Button>
+
 
     </LinearLayout>
 
@@ -142,10 +148,14 @@
 
         <Button
             android:id="@+id/btnSave"
-            style="?android:attr/buttonStyleSmall"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_gravity="center_horizontal|center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="@color/secondary"
+            android:fontFamily="@font/poppins_semibold"
             android:text="Save" />
 
     </LinearLayout>
