@@ -16,7 +16,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:fontFamily="@font/josefin_sans_semibold"
+        android:fontFamily="@font/poppins_semibold"
         android:text="WELCOME TO CALEO"
         android:textAlignment="center"
         android:textColor="#1B998B"
@@ -124,7 +124,7 @@
             android:layout_marginTop="10dp"
             android:backgroundTint="@color/secondary"
             android:ellipsize="middle"
-            android:paddingLeft="12dp"
+            android:paddingLeft="11dp"
             android:paddingEnd="8dp"
             android:paddingRight="8dp"
             app:icon="@drawable/ic_tips_and_updates_black_48dp"
@@ -154,7 +154,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="5dp"
-            android:backgroundTint="@color/secondary"
+            android:backgroundTint="@color/primary"
             android:fontFamily="@font/poppins_semibold"
             android:text="Save" />
 

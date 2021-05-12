@@ -8,23 +8,23 @@
     tools:context=".fragments.ProfileFragment">
 
     <View
-        android:id="@+id/ivSolid"
+        android:id="@+id/ivSolidEdit"
         android:layout_width="match_parent"
         android:layout_height="111dp"
         android:background="@color/primary" />
 
     <TextView
-        android:id="@+id/tvProfile"
+        android:id="@+id/tvProfileEdit"
         android:layout_width="match_parent"
         android:layout_height="63dp"
         android:background="@color/primary"
         android:fontFamily="@font/poppins_semibold"
-        android:text="  Profile"
+        android:text="  Edit"
         android:textColor="#FFFFFF"
         android:textSize="36sp" />
 
     <TextView
-        android:id="@+id/tvName"
+        android:id="@+id/tvNameEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -36,21 +36,21 @@
         android:textColor="#2D3047"
         android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/tvNameInput"
+    <EditText
+        android:id="@+id/etNameInputEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginBottom="15dp"
         android:fontFamily="@font/poppins"
-        android:text="John Doe"
+        android:inputType="text"
+        android:maxLines="1"
         android:textColor="@color/primary"
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/tvAge"
+        android:id="@+id/tvAgeEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -62,21 +62,22 @@
         android:textColor="#2D3047"
         android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/tvAgeInput"
+    <EditText
+        android:id="@+id/etAgeInputEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="0dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginBottom="15dp"
         android:fontFamily="@font/poppins"
-        android:text="21"
+        android:inputType="text"
+        android:maxLines="1"
         android:textColor="@color/primary"
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/tvHeight"
+        android:id="@+id/tvHeightEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -88,21 +89,22 @@
         android:textColor="#2D3047"
         android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/tvHeightInput"
+    <EditText
+        android:id="@+id/etHeightInputEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="0dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginBottom="15dp"
         android:fontFamily="@font/poppins"
-        android:text="180 cm"
+        android:inputType="text"
+        android:maxLines="1"
         android:textColor="@color/primary"
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/tvWeight"
+        android:id="@+id/tvWeightEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -114,21 +116,22 @@
         android:textColor="#2D3047"
         android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/tvWeightInput"
+    <EditText
+        android:id="@+id/etWeightInputEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="0dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginBottom="15dp"
         android:fontFamily="@font/poppins"
-        android:text="80 kg"
+        android:inputType="text"
+        android:maxLines="1"
         android:textColor="@color/primary"
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/tvCalGoal"
+        android:id="@+id/tvCalGoalEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -140,26 +143,27 @@
         android:textColor="#2D3047"
         android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/tvCalGoalInput"
+    <EditText
+        android:id="@+id/etCalGoalInputEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="0dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginBottom="15dp"
         android:fontFamily="@font/poppins"
-        android:text="1850 cal."
+        android:inputType="text"
+        android:maxLines="1"
         android:textColor="@color/primary"
         android:textSize="16sp" />
 
     <Button
-        android:id="@+id/btnEdit"
+        android:id="@+id/btnSaveEdit"
         android:layout_width="wrap_content"
         android:layout_height="55dp"
         android:layout_marginLeft="290dp"
         android:backgroundTint="@color/secondary"
         android:fontFamily="@font/poppins_semibold"
-        android:text="Edit" />
+        android:text="Save" />
 
 </LinearLayout>

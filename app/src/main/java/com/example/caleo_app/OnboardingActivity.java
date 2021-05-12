@@ -58,14 +58,8 @@ public class OnboardingActivity extends AppCompatActivity implements AdapterView
 
         loadItems();
         if (!info.isEmpty()){
-            Toast.makeText(this, info.get(0), Toast.LENGTH_LONG).show();
             goMainActivity();
         }
-
-
-//        if (current == 1){
-//            goMainActivity();
-//        }
 
 
         etName = findViewById(R.id.etName);
@@ -134,12 +128,16 @@ public class OnboardingActivity extends AppCompatActivity implements AdapterView
                 String gender = user.getGender();
                 String calGoal = etCalGoal.getText().toString();
 
+                if(age.isEmpty() || height.isEmpty() || weight.isEmpty() || gender.isEmpty() || calGoal.isEmpty() || name.isEmpty()){
+                    Toast.makeText(OnboardingActivity.this,"Please fill out all fields", Toast.LENGTH_SHORT).show();
+                }
+
                 info.add(name);
                 info.add(age);
                 info.add(height);
                 info.add(weight);
-                info.add(gender);
                 info.add(calGoal);
+                info.add(gender);
                 saveItems();
                 goMainActivity();
             }

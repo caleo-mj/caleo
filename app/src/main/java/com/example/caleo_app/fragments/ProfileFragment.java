@@ -1,32 +1,41 @@
 package com.example.caleo_app.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-
+import com.example.caleo_app.EditActivity;
 import com.example.caleo_app.R;
 
-import org.w3c.dom.Text;
+import org.apache.commons.io.FileUtils;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link ProfileFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ProfileFragment extends Fragment {
+public class ProfileFragment extends Fragment  {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    List<String> info;
 
     private View ivSolid;
     private TextView tvProfile;
@@ -40,6 +49,7 @@ public class ProfileFragment extends Fragment {
     private TextView tvWeightInput;
     private TextView tvCalGoal;
     private TextView tvCalGoalInput;
+    private Button btnEdit;
 
 
 
@@ -100,5 +110,44 @@ public class ProfileFragment extends Fragment {
         tvWeightInput = view.findViewById(R.id.tvWeightInput);
         tvCalGoal = view.findViewById(R.id.tvCalGoal);
         tvCalGoalInput = view.findViewById(R.id.tvCalGoalInput);
+        setInfo();
+        btnEdit = view.findViewById(R.id.btnEdit);
+        btnEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goEditActivity();
+            }
+        });
+
+    }
+
+    private void setInfo() {
+        loadItems();
+        tvNameInput.setText(info.get(0));
+        tvAgeInput.setText(info.get(1));
+        tvHeightInput.setText(info.get(2) + " cm");
+        tvWeightInput.setText(info.get(3) + " kg");
+        tvCalGoalInput.setText(info.get(4) + " cal.");
+    }
+
+    private File getDataFile(){
+        return new File(getActivity().getFilesDir(), "data.txt");
+    }
+
+    private void loadItems(){
+        try{
+            info = new ArrayList<>(FileUtils.readLines(getDataFile(), Charset.defaultCharset()));
+        }
+        catch (IOException e){
+            Log.e("ProfileFragment", "Error reading items", e);
+            info = new ArrayList<>();
+        }
+
+    }
+
+    private void goEditActivity() {
+        Intent i = new Intent(getActivity(), EditActivity.class);
+        startActivity(i);
+        getActivity().finish();
     }
 }
