@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.example.caleo_app.fragments.FoodFragment;
@@ -13,6 +16,8 @@ import com.example.caleo_app.fragments.HomeFragment;
 import com.example.caleo_app.fragments.ProfileFragment;
 import com.example.caleo_app.fragments.ScanFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -55,7 +60,24 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private File getDataFile(){
+        return new File(getFilesDir(), "data.txt");
+    }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.logout, menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == R.id.icLogout) {
+            getDataFile().delete();
+            Intent intent = new Intent(this, OnboardingActivity.class);
+            startActivityForResult(intent, 200);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
-//}
