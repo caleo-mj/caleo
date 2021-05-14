@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="75dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="May 12, 2021"
         android:textAlignment="center"
@@ -21,9 +21,9 @@
 
     <RelativeLayout
         android:id="@+id/rlProgress"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginStart="105dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="80dp"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="100dp"
@@ -31,22 +31,23 @@
 
         <!--progress bar implementation-->
 
+        <!--Text implementation in center of the progress bar-->
+
         <ProgressBar
             android:id="@+id/progress_bar"
             style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignWithParentIfMissing="true"
+            android:layout_centerInParent="true"
             android:layout_marginStart="0dp"
             android:layout_marginEnd="0dp"
             android:layout_marginBottom="0dp"
             android:background="@drawable/circular_shape"
             android:indeterminate="false"
-            android:progress="60"
+            android:progress="90"
             android:progressDrawable="@drawable/circular_progress_bar"
             android:textAlignment="center" />
-
-        <!--Text implementation in center of the progress bar-->
 
         <TextView
             android:id="@+id/progressCalNum"
@@ -54,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="53dp"
+            android:layout_marginTop="72dp"
             android:layout_marginBottom="-22dp"
             android:fontFamily="@font/poppins_semibold"
             android:gravity="center"
@@ -78,8 +79,8 @@
             android:fontFamily="@font/poppins"
             android:gravity="center"
             android:text="Calories\nRemaining"
-            android:textColor="@color/primary"
-            android:textSize="18sp"
+            android:textColor="@color/secondary"
+            android:textSize="22sp"
             app:autoSizeTextType="uniform"
             app:lineHeight="22sp" />
 
@@ -88,7 +89,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="60dp"
         android:orientation="horizontal">
 
         <RelativeLayout
@@ -130,7 +131,7 @@
                 android:fontFamily="@font/poppins"
                 android:gravity="center"
                 android:text="Daily\nGoal"
-                android:textColor="@color/primary"
+                android:textColor="@color/secondary"
                 android:textSize="24sp"
                 app:autoSizeTextType="uniform"
                 app:lineHeight="28dp" />
@@ -177,7 +178,7 @@
                 android:fontFamily="@font/poppins"
                 android:gravity="center"
                 android:text="Calories\nToday"
-                android:textColor="@color/primary"
+                android:textColor="@color/secondary"
                 android:textSize="24sp"
                 app:autoSizeTextType="uniform"
                 app:lineHeight="28dp" />
