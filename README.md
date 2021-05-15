@@ -8,7 +8,7 @@
 
 ## Overview
 ### Description
-Tracks the user's calorie intake through identifying different types of food and their associated calorie content, by taking input from the user's camera. 
+Tracks the user's calorie intake through identifying different types of food and their associated calorie content, by taking input from the user's camera.
 
 ### App Evaluation
 - **Category:** Health and Fitness
@@ -24,12 +24,12 @@ Tracks the user's calorie intake through identifying different types of food and
 
 **Required Must-have Stories**
 
-- [x] User can enter their name, height, weight, and age to get a recommended daily calorie goal. 
+- [x] User can enter their name, height, weight, and age to get a recommended daily calorie goal.
 - [x] User can view their information and their daily calorie goal.
 - [x] User can edit their information and their daily calorie goal.
 - [ ] User can view their daily intake, thier goal, and the remaining calories to acheive their goal.
 - [ ] User can use the device's camera to  capture images of their food
-- [ ] User gets back the associated calorie content of their food, and log it in to their daily intake. 
+- [ ] User gets back the associated calorie content of their food, and log it in to their daily intake.
 - [ ] User can choose to log food to their daily log manually by choosing from a list of food items.
 
 **Optional Nice-to-have Stories**
@@ -43,19 +43,19 @@ Tracks the user's calorie intake through identifying different types of food and
 ### 2. Screen Archetypes
 
 * Onboarding
-    * User can enter their name, height, weight, and age to get a recommended daily calorie goal. 
+    * User can enter their name, height, weight, and age to get a recommended daily calorie goal.
 * Profile Screen
     * User can view their information and their daily calorie goal.
 * Edit Screen
     * User can edit their information and their daily calorie goal.
 * Home Feed
     * User can view their daily intake, thier goal, and the remaining calories to acheive their goal.
-* Scan Screen 
+* Scan Screen
     * User can use the device's camera to  capture images of their food.
 * Detail Screen
     * User gets back the associated calorie content of their food, and log it in to their daily intake.
 * Stream Screen
-    * User can choose to log food to their daily log manually by choosing from a list of food items. 
+    * User can choose to log food to their daily log manually by choosing from a list of food items.
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
@@ -77,19 +77,19 @@ Tracks the user's calorie intake through identifying different types of food and
 ![](https://i.imgur.com/yM61VWt.jpg)
 
 
-## Schema 
+## Schema
 
 ### Models
 
-#### Food 
+#### Food
 
    | Property      | Type     | Description |
    | ------------- | -------- | ------------|
    | name      | String   | unique name for food item (default field) |
    | image        | File| image of food item |
    | calories         | Integer     | calorie count of food item |
-   
-#### User 
+
+#### User
 
    | Property      | Type     | Description |
    | ------------- | -------- | ------------|
@@ -100,14 +100,14 @@ Tracks the user's calorie intake through identifying different types of food and
    | height    | Double     | user height in cm |
    | calCount  | Integer    | keeps track of User daily calorie intake
    | calGoal   | Integer     | user daily calorie goal  |
-   
+
 ### Networking
-- We will be using a kaggle database of labeled food images in 101 categories of food to train a machine learning algorithm to recognize food from images taken by the user. 
+- We will be using a kaggle database of labeled food images in 101 categories of food to train a machine learning algorithm to recognize food from images taken by the user.
 - Source for food database: "https://www.kaggle.com/kmader/food41"
-- We will be saving our trained model and including it locally in the app data on the user's phone, so we don't need to use any online databases or APIs. 
-- We will get the information needed to map each food with its calorie count from another local dataset in csv format. 
+- We will be saving our trained model and including it locally in the app data on the user's phone, so we don't need to use any online databases or APIs.
+- We will get the information needed to map each food with its calorie count from another local dataset in csv format.
 - Source for calories database: "https://www.kaggle.com/data/192954"
 
 
-### Milestone1 GIF
-![](caleoMilestone1.gif)
+### Milestone2 GIF
+![](caleoMilestone2.gif)
