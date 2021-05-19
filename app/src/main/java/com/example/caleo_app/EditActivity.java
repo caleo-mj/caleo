@@ -75,6 +75,8 @@ public class EditActivity extends AppCompatActivity {
         info.add(etHeightInputEdit.getText().toString());
         info.add(etWeightInputEdit.getText().toString());
         info.add(etCalGoalInputEdit.getText().toString());
+        info.add("male");
+        info.add("0");
     }
 
     private File getDataFile(){
