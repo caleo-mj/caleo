@@ -1,13 +1,17 @@
 package com.example.caleo_app.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.caleo_app.MainActivity;
 import com.example.caleo_app.R;
 
 /**
@@ -55,6 +59,18 @@ public class FoodFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        OnBackPressedCallback callback = new OnBackPressedCallback(true /* enabled by default */) {
+            @Override
+            public void handleOnBackPressed() {
+                FragmentManager fm = getFragmentManager();
+                fm.beginTransaction().replace(R.id.flContainer, new HomeFragment()).commit();
+                MainActivity.bottomNavigationView.setSelectedItemId(R.id.action_home);
+            }
+        };
+        requireActivity().getOnBackPressedDispatcher().addCallback(this, callback);
+
+
     }
 
     @Override
@@ -62,5 +78,11 @@ public class FoodFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_food, container, false);
+    }
+
+    private void goMainActivity() {
+        Intent i = new Intent(getActivity(), MainActivity.class);
+        startActivity(i);
+        getActivity().finish();
     }
 }

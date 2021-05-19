@@ -11,11 +11,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import com.example.caleo_app.EditActivity;
+import com.example.caleo_app.MainActivity;
 import com.example.caleo_app.R;
 
 import org.apache.commons.io.FileUtils;
@@ -38,6 +41,7 @@ public class ProfileFragment extends Fragment  {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     List<String> info;
+
 
     private View ivSolid;
     private TextView tvProfile;
@@ -88,6 +92,16 @@ public class ProfileFragment extends Fragment  {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        OnBackPressedCallback callback = new OnBackPressedCallback(true /* enabled by default */) {
+            @Override
+            public void handleOnBackPressed() {
+                FragmentManager fm = getFragmentManager();
+                fm.beginTransaction().replace(R.id.flContainer, new HomeFragment()).commit();
+                MainActivity.bottomNavigationView.setSelectedItemId(R.id.action_home);
+            }
+        };
+        requireActivity().getOnBackPressedDispatcher().addCallback(this, callback);
     }
 
     @Override
@@ -150,6 +164,12 @@ public class ProfileFragment extends Fragment  {
 
     private void goEditActivity() {
         Intent i = new Intent(getActivity(), EditActivity.class);
+        startActivity(i);
+        getActivity().finish();
+    }
+
+    private void goMainActivity() {
+        Intent i = new Intent(getActivity(), MainActivity.class);
         startActivity(i);
         getActivity().finish();
     }

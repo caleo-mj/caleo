@@ -1,7 +1,9 @@
 package com.example.caleo_app;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.Context;
 import android.content.Intent;
@@ -23,6 +25,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.view.ViewGroup;
 
+import com.example.caleo_app.fragments.HomeFragment;
 import com.example.caleo_app.models.User;
 
 import org.apache.commons.io.FileUtils;
@@ -55,6 +58,14 @@ public class OnboardingActivity extends AppCompatActivity implements AdapterView
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_onboarding);
+
+        OnBackPressedCallback callback = new OnBackPressedCallback(true /* enabled by default */) {
+            @Override
+            public void handleOnBackPressed() {
+                finishAffinity();
+            }
+        };
+        getOnBackPressedDispatcher().addCallback(this, callback);
 
         loadItems();
         if (!info.isEmpty()){
@@ -138,7 +149,7 @@ public class OnboardingActivity extends AppCompatActivity implements AdapterView
                 info.add(weight);
                 info.add(calGoal);
                 info.add(gender);
-                info.add("200");
+                info.add("0");
                 saveItems();
                 goMainActivity();
             }

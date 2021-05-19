@@ -1,6 +1,8 @@
 package com.example.caleo_app;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +12,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.caleo_app.fragments.HomeFragment;
+import com.example.caleo_app.fragments.ProfileFragment;
 
 import org.apache.commons.io.FileUtils;
 
@@ -40,6 +45,16 @@ public class EditActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        OnBackPressedCallback callback = new OnBackPressedCallback(true /* enabled by default */) {
+            @Override
+            public void handleOnBackPressed() {
+                goMainActivity();
+            }
+        };
+        getOnBackPressedDispatcher().addCallback(this, callback);
+
+
         setContentView(R.layout.activity_edit);
         loadItems();
         ivSolidEdit = findViewById(R.id.ivSolidEdit);
@@ -95,7 +110,7 @@ public class EditActivity extends AppCompatActivity {
             public void onClick(View v) {
                 populateInfo();
                 saveItems();
-                goProfileActivity();
+                goMainActivity();
             }
         });
     }
@@ -135,7 +150,7 @@ public class EditActivity extends AppCompatActivity {
         }
     }
 
-    private void goProfileActivity() {
+    private void goMainActivity() {
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
         finish();

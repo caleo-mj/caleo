@@ -6,10 +6,12 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -22,6 +24,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.caleo_app.DetailsActivity;
+import com.example.caleo_app.MainActivity;
 import com.example.caleo_app.R;
 import com.example.caleo_app.models.BitmapScaler;
 
@@ -83,6 +86,16 @@ public class ScanFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        OnBackPressedCallback callback = new OnBackPressedCallback(true /* enabled by default */) {
+            @Override
+            public void handleOnBackPressed() {
+                FragmentManager fm = getFragmentManager();
+                fm.beginTransaction().replace(R.id.flContainer, new HomeFragment()).commit();
+                MainActivity.bottomNavigationView.setSelectedItemId(R.id.action_home);
+            }
+        };
+        requireActivity().getOnBackPressedDispatcher().addCallback(this, callback);
 
     }
 
@@ -148,6 +161,7 @@ public class ScanFragment extends Fragment {
 
             } else { // Result was a failure
                 Toast.makeText(getContext(), "Picture wasn't taken!", Toast.LENGTH_SHORT).show();
+                goMainActivity();
             }
         }
     }
@@ -166,6 +180,12 @@ public class ScanFragment extends Fragment {
 
         // Return the file target for the photo based on filename
         return new File(mediaStorageDir.getPath() + File.separator + fileName);
+    }
+
+    private void goMainActivity() {
+        Intent i = new Intent(getActivity(), MainActivity.class);
+        startActivity(i);
+        getActivity().finish();
     }
 
 
