@@ -45,7 +45,7 @@
             android:layout_marginBottom="0dp"
             android:background="@drawable/circular_shape"
             android:indeterminate="false"
-            android:progress="90"
+            android:progress="100"
             android:progressDrawable="@drawable/circular_progress_bar"
             android:textAlignment="center" />
 
