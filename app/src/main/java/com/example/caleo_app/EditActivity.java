@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.apache.commons.io.FileUtils;
 
@@ -34,6 +35,7 @@ public class EditActivity extends AppCompatActivity {
     private TextView tvCalGoalEdit;
     private EditText etCalGoalInputEdit;
     private Button btnSaveEdit;
+    private Button btnHintEdit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +59,36 @@ public class EditActivity extends AppCompatActivity {
         tvCalGoalEdit = findViewById(R.id.tvCalGoalEdit);
         etCalGoalInputEdit = findViewById(R.id.etCalGoalInputEdit);
         etCalGoalInputEdit.setText(info.get(4));
+        btnHintEdit = findViewById(R.id.btnHintEdit);
+        btnHintEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("EditActivity", "onClick hint button");
+                String age = etAgeInputEdit.getText().toString();
+                String height = etHeightInputEdit.getText().toString();
+                String weight = etWeightInputEdit.getText().toString();
+                String gender = info.get(4);
+
+
+
+                if(age.isEmpty() || height.isEmpty() || weight.isEmpty() || gender.isEmpty()){
+                    Toast.makeText(EditActivity.this,"Please enter your age, gender, height, and weight", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    int goal = (int)(10*Integer.parseInt(weight) + 6.25*Integer.parseInt(height)-5*Integer.parseInt(age));
+                    if(gender.equals("male")){
+                        goal += 5;
+                    }
+                    else{
+                        goal -= 161;
+                    }
+                    Toast.makeText(EditActivity.this, "Your recommended daily calorie goal is " + goal, Toast.LENGTH_LONG).show();
+                }
+
+
+            }
+
+        });
         btnSaveEdit = findViewById(R.id.btnSaveEdit);
         btnSaveEdit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,14 +101,16 @@ public class EditActivity extends AppCompatActivity {
     }
 
     private void populateInfo() {
+        String gender = info.get(4);
+        String calCount = info.get(6);
         info.clear();
         info.add(etNameInputEdit.getText().toString());
         info.add(etAgeInputEdit.getText().toString());
         info.add(etHeightInputEdit.getText().toString());
         info.add(etWeightInputEdit.getText().toString());
         info.add(etCalGoalInputEdit.getText().toString());
-        info.add("male");
-        info.add("0");
+        info.add(gender);
+        info.add(calCount);
     }
 
     private File getDataFile(){
