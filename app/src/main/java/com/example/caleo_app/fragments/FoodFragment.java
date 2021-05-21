@@ -6,6 +6,9 @@ import android.os.Bundle;
 import androidx.activity.OnBackPressedCallback;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +16,15 @@ import android.view.ViewGroup;
 
 import com.example.caleo_app.MainActivity;
 import com.example.caleo_app.R;
+import com.example.caleo_app.adapters.FoodAdapter;
+import com.example.caleo_app.models.Food;
+import com.opencsv.CSVReaderHeaderAware;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +37,7 @@ public class FoodFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    public List<Food> food;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -59,6 +72,40 @@ public class FoodFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        getActivity().setContentView(R.layout.activity_main);
+
+        try {
+            CSVReaderHeaderAware dataReadIn	= new CSVReaderHeaderAware(new FileReader("food-calories.csv"));
+            ArrayList<String[]>	myEntries = new	ArrayList<String[]>(dataReadIn.readAll());
+
+
+
+            food = Food.getFood(getContext(), myEntries);
+            dataReadIn.close();
+
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            System.out.println("File Not Found");
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        // Lookup the recyclerview in activity layout
+        RecyclerView rvFood = (RecyclerView) getActivity().findViewById(R.id.rvFood);
+        // Create adapter passing in the sample user data
+        FoodAdapter adapter = new FoodAdapter(getActivity(), food);
+        // Attach the adapter to the recyclerview to populate items
+        rvFood.setAdapter(adapter);
+        // Set layout manager to position the items
+        // First param is number of columns and second param is orientation i.e Vertical or Horizontal
+//        StaggeredGridLayoutManager gridLayoutManager =
+//                new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+// Attach the layout manager to the recycler view
+        rvFood.setLayoutManager(new GridLayoutManager(getContext(), 2));
+
+        // That's all!
 
         OnBackPressedCallback callback = new OnBackPressedCallback(true /* enabled by default */) {
             @Override
