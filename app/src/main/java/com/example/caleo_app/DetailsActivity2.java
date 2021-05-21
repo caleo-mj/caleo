@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
 
 import com.example.caleo_app.models.Food;
 
@@ -18,7 +20,7 @@ public class DetailsActivity2 extends DetailsActivity {
     protected void handleInput() {
         Food foodItem = (Food) Parcels.unwrap(getIntent().getParcelableExtra("food"));
         tvPrediction.setText(foodItem.getName());
-        tvCal.setText(foodItem.getCalories());
+        tvCal.setText(Integer.toString(foodItem.getCalories()) + " cal.");
         ivImage.setImageDrawable(loadDrawableFromAssets(this, foodItem.getImage() + ".jpg"));
     }
 

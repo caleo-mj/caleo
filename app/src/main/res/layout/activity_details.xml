@@ -35,11 +35,13 @@
         android:id="@+id/tvPrediction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autoText="false"
         android:backgroundTint="#FFFFFF"
         android:fontFamily="@font/poppins_semibold"
         android:text="Steak"
         android:textColor="@color/cadet"
         android:textSize="30sp"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -57,9 +59,8 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivImage"
-        app:layout_constraintVertical_bias="0.407" />
+        app:layout_constraintTop_toBottomOf="@+id/tvPrediction"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

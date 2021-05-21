@@ -3,6 +3,7 @@ package com.example.caleo_app;
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
@@ -49,8 +50,6 @@ public class DetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
 
-
-
         ivImage = findViewById(R.id.ivImage);
         tvPrediction = (TextView) findViewById(R.id.tvPrediction);
         tvCal = findViewById(R.id.tvCal);
@@ -62,6 +61,7 @@ public class DetailsActivity extends AppCompatActivity {
                 loadItems();
                 info.set(6, Integer.toString(Integer.parseInt(info.get(6)) + Integer.parseInt(tvCal.getText().toString())));
                 saveItems();
+                goMainActivity();
             }
         });
 
@@ -164,8 +164,18 @@ public class DetailsActivity extends AppCompatActivity {
     private int getCal(String food) {
         int result = 0;
         try {
-            CSVReaderHeaderAware dataReadIn	= new CSVReaderHeaderAware(new FileReader("food-calories.csv"));
-            ArrayList<String[]>	myEntries = new	ArrayList<String[]>(dataReadIn.readAll());
+            ArrayList<String[]>	myEntries = new	ArrayList<String[]>();
+
+
+            InputStreamReader is = new InputStreamReader(getAssets()
+                    .open("food-calories.csv"));
+
+            BufferedReader reader = new BufferedReader(is);
+            reader.readLine();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                myEntries.add(line.split(","));
+            }
 
 
             result =  Integer.parseInt(myEntries.get(getIndex(food))[1]);
@@ -219,10 +229,15 @@ public class DetailsActivity extends AppCompatActivity {
 
 //            tvPrediction.setText(outputFeature0.getIntArray()[max]+ "\n");
             tvPrediction.setText(loadItems(max));
-            tvCal.setText(getCal(loadItems(max)));
+            tvCal.setText(Integer.toString(getCal(loadItems(max))) + " cal.");
         } catch (IOException e) {
-            Toast.makeText(this, "a7a b2a yoooh", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Redo ml", Toast.LENGTH_SHORT).show();
         }
+    }
+    private void goMainActivity() {
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
+        finish();
     }
 
 }

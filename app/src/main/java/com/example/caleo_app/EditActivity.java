@@ -46,13 +46,13 @@ public class EditActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        OnBackPressedCallback callback = new OnBackPressedCallback(true /* enabled by default */) {
-            @Override
-            public void handleOnBackPressed() {
-                goMainActivity();
-            }
-        };
-        getOnBackPressedDispatcher().addCallback(this, callback);
+//        OnBackPressedCallback callback = new OnBackPressedCallback(true /* enabled by default */) {
+//            @Override
+//            public void handleOnBackPressed() {
+//                goMainActivity();
+//            }
+//        };
+//        getOnBackPressedDispatcher().addCallback(this, callback);
 
 
         setContentView(R.layout.activity_edit);
