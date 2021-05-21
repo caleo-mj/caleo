@@ -74,7 +74,7 @@ public class FoodAdapter extends
                 @Override
                 public void onClick(View v) {
                     // first parameter is the context, second is the class of the activity to launch
-                    Intent i =  new Intent(context, DetailsActivity.class);
+                    Intent i =  new Intent(context, DetailsActivity2.class);
                     i.putExtra("food", Parcels.wrap(foodItem));
                     context.startActivity(i);
                 }

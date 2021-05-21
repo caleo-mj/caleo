@@ -20,7 +20,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Caleoapp">
-        <activity android:name=".DetailsActivity"></activity>
+        <activity android:name=".DetailsActivity2"></activity>
+        <activity android:name=".DetailsActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

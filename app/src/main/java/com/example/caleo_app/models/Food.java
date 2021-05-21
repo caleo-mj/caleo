@@ -16,12 +16,12 @@ import java.util.List;
 @Parcel
 public class Food {
      String name;
-     Drawable image;
+     int imageIndex;
      int calories;
 
-     public Food(String name, Drawable image, int calories) {
+     public Food(String name, int imageIndex, int calories) {
         this.name = name;
-        this.image = image;
+        this.imageIndex = imageIndex;
         this.calories = calories;
     }
 
@@ -34,8 +34,8 @@ public class Food {
         return name;
     }
 
-    public Drawable getImage() {
-        return image;
+    public int getImage() {
+        return imageIndex;
     }
 
     public int getCalories() {
@@ -46,31 +46,12 @@ public class Food {
         List<Food> food = new ArrayList<>();
         for (int i = 0; i < foodData.size(); i++) {
             // populating movies list
-            food.add(new Food(foodData.get(i)[0], loadDrawableFromAssets(context, i + ".jpg"), Integer.parseInt(foodData.get(i)[1])));
+            food.add(new Food(foodData.get(i)[0], i, Integer.parseInt(foodData.get(i)[1])));
         }
         return food;
     }
 
-    public static Drawable loadDrawableFromAssets(Context context, String path)
-    {
-        InputStream stream = null;
-        try
-        {
-            stream = context.getAssets().open(path);
-            return Drawable.createFromStream(stream, null);
-        }
-        catch (Exception ignored) {} finally
-        {
-            try
-            {
-                if(stream != null)
-                {
-                    stream.close();
-                }
-            } catch (Exception ignored) {}
-        }
-        return null;
-    }
+
 
 
 }
