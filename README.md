@@ -109,5 +109,5 @@ Tracks the user's calorie intake through identifying different types of food and
 - Source for calories database: "https://www.kaggle.com/data/192954"
 
 
-### Milestone2 GIF
-![](caleoMilestone2.gif)
+### Milestone3 GIF
+![](caleoMilestone3.gif)
