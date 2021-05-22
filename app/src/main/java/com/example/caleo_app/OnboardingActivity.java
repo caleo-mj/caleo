@@ -149,7 +149,7 @@ public class OnboardingActivity extends AppCompatActivity implements AdapterView
                 info.add(weight);
                 info.add(calGoal);
                 info.add(gender);
-                info.add("0");
+                info.add("0 cal.");
                 saveItems();
                 goMainActivity();
             }

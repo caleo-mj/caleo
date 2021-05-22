@@ -130,17 +130,18 @@ public class HomeFragment extends Fragment {
         date = dateFormat.format(calendar.getTime());
         tvDate.setText(date);
         int progress = 0;
-        if (Double.parseDouble(info.get(6)) >= Double.parseDouble(info.get(4))){
+
+        if (Double.parseDouble(info.get(6).split(" ")[0]) >= Double.parseDouble(info.get(4))){
             progress = 100;
             progressCalNum.setText("0");
         }
         else{
-            progress = (int) ((Double.parseDouble(info.get(6)) / Double.parseDouble(info.get(4)) * 100));
-            progressCalNum.setText(Integer.toString((Integer.parseInt(info.get(4)) - Integer.parseInt(info.get(6)))));
+            progress = (int) ((Double.parseDouble(info.get(6).split(" ")[0]) / Double.parseDouble(info.get(4)) * 100));
+            progressCalNum.setText(Integer.toString((Integer.parseInt(info.get(4)) - Integer.parseInt(info.get(6).split(" ")[0]))));
 
         }
         progress_bar.setProgress(progress);
         tvGoalNum.setText(info.get(4));
-        tvFoodNum.setText(info.get(6));
+        tvFoodNum.setText(info.get(6).split(" ")[0]);
     }
 }

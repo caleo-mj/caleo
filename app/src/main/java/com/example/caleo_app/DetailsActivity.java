@@ -59,7 +59,7 @@ public class DetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 loadItems();
-                info.set(6, Integer.toString(Integer.parseInt(info.get(6)) + Integer.parseInt(tvCal.getText().toString())));
+                info.set(6, Integer.toString(Integer.parseInt(info.get(6).split(" ")[0]) + Integer.parseInt(tvCal.getText().toString().split(" ")[0])) + " cal.");
                 saveItems();
                 goMainActivity();
             }
