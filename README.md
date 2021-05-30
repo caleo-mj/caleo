@@ -28,8 +28,8 @@ Tracks the user's calorie intake through identifying different types of food and
 - [x] User can view their information and their daily calorie goal.
 - [x] User can edit their information and their daily calorie goal.
 - [x] User can view their daily intake, thier goal, and the remaining calories to acheive their goal.
-- [ ] User can use the device's camera to  capture images of their food
-- [ ] User gets back the associated calorie content of their food, and log it in to their daily intake.
+- [x] User can use the device's camera to  capture images of their food
+- [x] User gets back the associated calorie content of their food, and log it in to their daily intake.
 - [x] User can choose to log food to their daily log manually by choosing from a list of food items.
 
 **Optional Nice-to-have Stories**
@@ -109,5 +109,5 @@ Tracks the user's calorie intake through identifying different types of food and
 - Source for calories database: "https://www.kaggle.com/data/192954"
 
 
-### Milestone3 GIF
-![](caleoMilestone3.gif)
+### Milestone4 GIF
+![](caleoMilestone4.gif)
